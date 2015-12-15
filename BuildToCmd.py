@@ -8,11 +8,11 @@ inputs = (
     ("IF Filtered: Copy block (ID)", 0),
 )
 
-removeOld = options["Move"]
-removeAir = options["Masked"]
-filtered = options["Filtered"]
+removeOld = inputs[1]
+removeAir = inputs[2]
+filtered = inputs[3]
 if filtered:
-    blockToCopy = options["IF Filtered: Copy block (ID)"]
+    blockToCopy = inputs[4]
 
 def perform(level, box, options):
     if filtered:
@@ -20,14 +20,14 @@ def perform(level, box, options):
             for z in xrange(box.minz, box.maxz):
                 for y in xrange(box.miny, box.maxy):
                     if not (level.blockAt(x, y, z) == 0) or not removeAir:
-                        if not (level.blockAt(x, y, z) == blockToCopy)
-                            # Add to cmd
+                        if not (level.blockAt(x, y, z) == blockToCopy):
+                            print("WIP")
     else:
         for x in xrange(box.minx, box.maxx):
             for z in xrange(box.minz, box.maxz):
                 for y in xrange(box.miny, box.maxy):
                     if not (level.blockAt(x, y, z) == 0) or not removeAir:
-                        # Add to cmd
+                        print("WIP")
     if removeOld:
         for x in xrange(box.minx, box.maxx):
             for z in xrange(box.minz, box.maxz):
