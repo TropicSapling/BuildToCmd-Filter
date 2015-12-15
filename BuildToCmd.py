@@ -1,4 +1,4 @@
-displayName = "Test Filter"
+displayName = "Export selected area to command"
 
 inputs = (
     ("Export to CMD", "title"),
